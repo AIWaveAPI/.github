@@ -1,27 +1,20 @@
 # AIWave API
 
-**One API Key for 50+ Chinese AI Models — OpenAI Compatible**
+**One API Key for 48 Chinese AI Models — OpenAI Compatible**
 
 [![Website](https://img.shields.io/badge/website-aiwave.live-blue)](https://aiwave.live)
-[![Models](https://img.shields.io/badge/models-50+-brightgreen)](https://aiwave.live/pricing)
+[![Models](https://img.shields.io/badge/models-48-brightgreen)](https://aiwave.live/pricing)
 
-## Supported Models
+## Live model catalog
 
-| Provider | Models |
-|----------|--------|
-| **DeepSeek** | V4 Pro, V3, R1 (Reasoning) |
-| **GLM** | GLM-5.1, GLM-5, GLM-4-Flash |
-| **Kimi** | Kimi VL (Vision), Kimi Thinking |
-| **ERNIE** | ERNIE 4.5, ERNIE Speed |
-| **Qwen** | Qwen 3, Qwen 3 VL |
-| **+ more** | 50+ Chinese AI models |
+AIWave provides one OpenAI-compatible endpoint for 48 Chinese AI models. The live model names and USD prices are maintained on the [pricing page](https://aiwave.live/pricing); do not rely on a static README list.
 
 ## Quick Start
 
 ```python
 from openai import OpenAI
 client = OpenAI(
-    api_key="***",
+    api_key="YOUR_API_KEY_HERE",
     base_url="https://aiwave.live/v1"
 )
 response = client.chat.completions.create(
@@ -30,17 +23,23 @@ response = client.chat.completions.create(
 )
 ```
 
+Use a key from [aiwave.live](https://aiwave.live), and never commit a real key.
+
 ## Why AIWave?
 
-- **One API key** — all 50+ models
-- **Pay-as-you-go** — no minimum deposit
-- **Start free** — free credits on signup
-- **OpenAI compatible** — works with existing tools
+- **One API key** for 48 Chinese AI models
+- **OpenAI compatible** with existing SDKs and tools
+- **Pay-as-you-go** USD billing
+- **$1 free credit** on signup for testing
 
-**[Get started →](https://aiwave.live)**
+## Resources
+
+- [Pricing and live model catalog](https://aiwave.live/pricing)
+- [Developer blog](https://aiwave.live/blog/)
 
 ### SDKs
-| Language | |
-|----------|-----|
+
+| Language | Repository |
+|----------|------------|
 | Python | [aiwave-sdk-python](https://github.com/AIWaveAPI/aiwave-sdk-python) |
 | Node.js | [aiwave-sdk-node](https://github.com/AIWaveAPI/aiwave-sdk-node) |
