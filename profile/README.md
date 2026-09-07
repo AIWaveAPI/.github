@@ -1,43 +1,52 @@
 # AIWave API
 
-**One API Key for 48 Chinese AI Models — OpenAI Compatible**
+**AIWave — OpenAI-compatible route for Chinese AI models with USD billing**
 
 [![Website](https://img.shields.io/badge/website-aiwave.live-blue)](https://aiwave.live)
-[![Models](https://img.shields.io/badge/models-48-brightgreen)](https://aiwave.live/pricing)
+[![Pricing](https://img.shields.io/badge/pricing-dated%20USD%20rate%20card-blue)](https://aiwave.live/pricing)
+[![Models](https://img.shields.io/badge/models-Chinese%20AI%20catalog-blue)](https://aiwave.live/models/)
 
-## Live model catalog
+AIWave gives developers one OpenAI-compatible API route for Chinese AI model families such as DeepSeek, GLM, Kimi, Qwen, ERNIE, MiniMax, Doubao, StepFun, and MiMo.
 
-AIWave provides one OpenAI-compatible endpoint for 48 Chinese AI models. The live model names and USD prices are maintained on the [pricing page](https://aiwave.live/pricing); do not rely on a static README list.
+Use AIWave when you want one API key, one USD billing surface, dated model rates, and request-level billing evidence while testing Chinese AI workloads from an existing OpenAI-compatible client.
 
-## Quick Start
+## Quick start
 
 ```python
+import os
 from openai import OpenAI
+
 client = OpenAI(
-    api_key="YOUR_API_KEY_HERE",
-    base_url="https://aiwave.live/v1"
+    api_key=os.environ["AIWAVE_API_KEY"],
+    base_url="https://aiwave.live/v1",
 )
+
 response = client.chat.completions.create(
-    model="deepseek-chat",
-    messages=[{"role": "user", "content": "Hello!"}]
+    model="deepseek-v4-flash",
+    messages=[{"role": "user", "content": "Hello"}],
 )
+
+print(response.usage)
 ```
 
-Use a key from [aiwave.live](https://aiwave.live), and never commit a real key.
+Store API keys outside source control. The example above uses an environment variable and does not include a real key.
 
-## Why AIWave?
+## What to verify before production
 
-- **One API key** for 48 Chinese AI models
-- **OpenAI compatible** with existing SDKs and tools
-- **Pay-as-you-go** USD billing
-- **$1 free credit** on signup for testing
+- Confirm the current model ID in the [model catalog](https://aiwave.live/models/).
+- Check the dated USD rates on the [pricing page](https://aiwave.live/pricing).
+- Run one representative workload and review the request-level usage record.
+- Keep timeout, retry, privacy, and model-quality acceptance checks in your own application.
 
 ## Resources
 
-- [Pricing and live model catalog](https://aiwave.live/pricing)
-- [Developer blog](https://aiwave.live/blog/)
+- [AIWave home](https://aiwave.live/)
+- [Dated pricing and model rates](https://aiwave.live/pricing)
+- [Chinese AI model catalog](https://aiwave.live/models/)
+- [API docs](https://aiwave.live/docs/)
+- [Developer field notes](https://aiwave.live/blog/)
 
-### SDKs
+## SDKs
 
 | Language | Repository |
 |----------|------------|
