@@ -1,43 +1,76 @@
-# AIWave API
+<div align="center">
 
-**AIWave — OpenAI-compatible route for Chinese AI models with USD billing**
+# AIWave
 
-[![Website](https://img.shields.io/badge/website-aiwave.live-blue)](https://aiwave.live)
+**One OpenAI-compatible API for Chinese AI models — and AI video.**
+
+[![Models](https://img.shields.io/badge/models-128%20live%20routes-blue)](https://aiwave.live/models)
+[![Video](https://img.shields.io/badge/video-13%20generation%20routes-purple)](https://aiwave.live/models)
+[![Families](https://img.shields.io/badge/families-9%20Chinese%20AI%20vendors-blue)](https://aiwave.live/models)
 [![Pricing](https://img.shields.io/badge/pricing-dated%20USD%20rate%20card-blue)](https://aiwave.live/pricing)
-[![Quickstart](https://img.shields.io/badge/docs-30%20second%20quickstart-blue)](https://aiwave.live/docs/quickstart)
+[![Docs](https://img.shields.io/badge/docs-30%20second%20quickstart-blue)](https://aiwave.live/docs/quickstart)
 
-AIWave gives developers one OpenAI-compatible API route for Chinese AI model families such as DeepSeek, GLM, Kimi, Qwen, ERNIE, MiniMax, Doubao, StepFun, and MiMo.
+</div>
 
-Use one API key, one USD billing surface, dated model rates, and request-level usage evidence while testing Chinese AI workloads from an existing OpenAI-compatible client.
+---
 
-## Quick start
+One key. One endpoint. **128 live model routes** across nine Chinese AI families — DeepSeek, GLM, Kimi, Qwen, ERNIE, MiniMax, Doubao, StepFun, and Xiaomi MiMo — plus **13 AI video generation routes** (Kling, Seedance, Hailuo, Wan, Vidu).
 
-```bash
-curl https://aiwave.live/v1/chat/completions \
-  -H "Authorization: Bearer $AIWAVE_API_KEY" -H "Content-Type: application/json" \
-  -d '{"model":"deepseek-flash","messages":[{"role":"user","content":"Reply with OK"}]}'
+Keep your OpenAI SDK. Change one string. Ship.
+
+```python
+from openai import OpenAI
+
+client = OpenAI(
+    api_key="your-aiwave-key",
+    base_url="https://aiwave.live/v1",
+)
+
+resp = client.chat.completions.create(
+    model="deepseek-v4-flash",
+    messages=[{"role": "user", "content": "Say hello in one sentence."}],
+)
 ```
 
-Store API keys outside source control. This example reads the key from an environment variable and does not include a real credential.
+**Get a key:** [aiwave.live/register](https://aiwave.live/register) — free tier included.
 
-## What to verify before production
+---
 
-- Confirm the exact model ID in the [model catalog](https://aiwave.live/models/).
-- Check the dated USD rates in the [pricing JSON](https://aiwave.live/api/v1/pricing).
-- Run one representative workload and review the request-level usage record.
-- Keep timeout, retry, privacy, and model-quality acceptance checks in your own application.
+## What's in the catalog
 
-## Resources
+| Family | Highlights |
+|---|---|
+| DeepSeek | `deepseek-v4-pro`, `deepseek-v4-flash` — flagship & budget reasoning |
+| GLM (Zhipu) | `glm-5`, `glm-5.1`, `glm-5.3` series |
+| Kimi (Moonshot) | `kimi-k3` long-context |
+| Qwen (Alibaba) | qwen3.8 full line — Max, Coder, audio, embeddings |
+| ERNIE / MiniMax / Doubao / StepFun / MiMo | Complete family coverage |
+| **AI Video** | **Kling v3 / video-o1, Seedance 2.5, Hailuo 2.3, Wan 3.0, Vidu Q3** |
 
-- [30-second quickstart](https://aiwave.live/docs/quickstart)
-- [Dated pricing page](https://aiwave.live/pricing)
-- [Filterable model comparison](https://aiwave.live/compare/chinese-ai-models)
-- [API documentation](https://aiwave.live/docs/)
-- [Developer field notes](https://aiwave.live/blog/)
+Full list with live availability: [aiwave.live/models](https://aiwave.live/models)
+Dated USD rates: [aiwave.live/pricing](https://aiwave.live/pricing)
 
-## SDKs
+## Repositories
 
-| Language | Repository |
-|----------|------------|
-| Python | [aiwave-sdk-python](https://github.com/AIWaveAPI/aiwave-sdk-python) |
-| Node.js | [aiwave-sdk-node](https://github.com/AIWaveAPI/aiwave-sdk-node) |
+| Repo | What it is |
+|---|---|
+| [aiwave-quickstart](https://github.com/AIWaveAPI/aiwave-quickstart) | curl / Python / Node examples — first call in under a minute |
+| [aiwave-sdk-python](https://github.com/AIWaveAPI/aiwave-sdk-python) | `pip install aiwave` |
+| [aiwave-sdk-node](https://github.com/AIWaveAPI/aiwave-sdk-node) | `npm install aiwave` |
+
+## Why developers pick AIWave
+
+- **One key, nine families** — no nine vendor accounts, no nine invoices
+- **Video included** — the same key renders Kling and Seedance clips; most aggregators don't offer video at all
+- **Prices synced to vendor list prices** — dated rate card, no stale numbers
+- **OpenAI-compatible** — your existing SDK works; swap `base_url` and go
+
+## Verify before you build
+
+- Exact model IDs: [model catalog](https://aiwave.live/models/)
+- Dated USD rates: [pricing JSON](https://aiwave.live/api/v1/pricing)
+- Run one representative workload and check the usage record in the console
+
+## Links
+
+[Quickstart](https://aiwave.live/docs/quickstart) · [Pricing](https://aiwave.live/pricing) · [Model comparison](https://aiwave.live/compare/chinese-ai-models) · [API docs](https://aiwave.live/docs/) · [Field notes](https://aiwave.live/blog/) · [Create account](https://aiwave.live/register)
