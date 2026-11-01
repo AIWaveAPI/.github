@@ -6,7 +6,7 @@
 
 [![Routes](https://img.shields.io/badge/public%20rate%20card-97%20routes-blue)](https://aiwave.live/api/pricing)
 [![Families](https://img.shields.io/badge/Chinese%20families-10-blue)](https://aiwave.live/models)
-[![Video](https://img.shields.io/badge/public%20video%20routes-10-purple)](https://aiwave.live/models)
+[![Video](https://img.shields.io/badge/public%20video%20routes-13-purple)](https://aiwave.live/models)
 [![Docs](https://img.shields.io/badge/docs-quickstart-blue)](https://aiwave.live/docs/quickstart)
 
 </div>
