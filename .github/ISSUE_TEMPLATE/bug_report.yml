@@ -1,0 +1,48 @@
+name: Bug report
+description: Something doesn't work as documented
+title: "[bug] "
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Please do **not** paste API keys or tokens. Redact them as `sk-REDACTED`.
+        For account/billing problems, use the console at https://aiwave.live.
+  - type: input
+    id: repo
+    attributes:
+      label: Which repository / component
+      placeholder: aiwave-sdk-python / video-pack / aiwave.live
+    validations:
+      required: true
+  - type: input
+    id: model
+    attributes:
+      label: Model ID (if applicable)
+      placeholder: deepseek-v4.1-flash
+    validations:
+      required: false
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: Minimal reproduction
+      render: bash
+      placeholder: |
+        curl https://aiwave.live/v1/chat/completions \
+          -H "Authorization: Bearer sk-REDACTED" \
+          -H "Content-Type: application/json" \
+          -d '{"model":"deepseek-v4.1-flash","messages":[{"role":"user","content":"hi"}]}'
+    validations:
+      required: true
+  - type: textarea
+    id: observed
+    attributes:
+      label: What happened / what you expected
+    validations:
+      required: true
+  - type: input
+    id: requestid
+    attributes:
+      label: Request ID (for 5xx)
+    validations:
+      required: false
