@@ -16,7 +16,7 @@
 One key. One endpoint. **97 routes on the public rate card** across **10
 Chinese AI families** — DeepSeek, GLM, Kimi, Qwen, Doubao, StepFun,
 Xiaomi MiMo, MiniMax, Kling, Wan — plus Claude coding-team and other
-international routes, and **10 public video-generation routes** (more on
+international routes, and **13 public video-generation routes** (more on
 paid tiers).
 
 Keep your OpenAI SDK. Change one string. Ship.
