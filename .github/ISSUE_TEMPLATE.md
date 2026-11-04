@@ -1,3 +1,11 @@
+---
+name: Issue intake guide
+about: Where to report bugs, pricing errors, questions and security issues
+title: ''
+labels: ''
+assignees: ''
+---
+
 <!--
 This file exists so GitHub's community-profile check recognizes an issue
 template. The actual, structured forms live in .github/ISSUE_TEMPLATE/
