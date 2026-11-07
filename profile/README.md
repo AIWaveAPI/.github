@@ -43,7 +43,7 @@ resp = client.chat.completions.create(
 
 ## Verify our numbers yourself
 
-Every claim in this org traces to a public endpoint. No marketing math:
+The AIWave catalog counts and model IDs below trace to the live public endpoint:
 
 ```bash
 # Route count on the live public rate card
@@ -54,7 +54,7 @@ curl -s https://aiwave.live/api/pricing | python3 -c \
 curl -s https://aiwave.live/api/pricing | python3 -m json.tool | head -30
 ```
 
-If any number in our repos disagrees with these endpoints, that's a bug —
+If an AIWave catalog number in our repos disagrees with this endpoint, that's a bug —
 open an issue. The [quickstart repo](https://github.com/AIWaveAPI/aiwave-quickstart)
 runs this comparison in CI every day, across every repo in this org.
 
@@ -106,10 +106,14 @@ Dated USD rates: [aiwave.live/pricing](https://aiwave.live/pricing)
 | [aiwave-video-pack](https://github.com/AIWaveAPI/aiwave-video-pack) | Free validated cinematic prompt modules (with evidence) |
 | [aiwave-sdk-python](https://github.com/AIWaveAPI/aiwave-sdk-python) | `pip install aiwave` |
 | [aiwave-sdk-node](https://github.com/AIWaveAPI/aiwave-sdk-node) | `npm install aiwave` |
+| [credit-receipt](https://github.com/AIWaveAPI/credit-receipt) | Offline, supplier-neutral credit-ledger checks; reports unknowns instead of inventing a cash rate |
+
+Repository changes can precede a package release. Check the installed package
+version and its release notes before relying on a new SDK fix.
 
 ## How this org handles facts
 
-- **Prices and model IDs** come from the live public endpoint, never from a
+- **AIWave prices and model IDs** come from the live public endpoint, never from a
   copied blog post or another aggregator.
 - **Route counts** are checked by CI daily; a drift turns the build red and
   names the exact `file:line`.
