@@ -19,8 +19,8 @@ AIWave is an OpenAI-compatible API that serves **97 public routes** across
 **10 Chinese AI model families** — DeepSeek, GLM, Kimi, Qwen, Doubao, StepFun,
 Xiaomi MiMo, MiniMax, Kling and Wan — plus Claude coding-team and other
 international routes, and **13 public video-generation routes**. One key and
-one endpoint; the model ID is a parameter. Every catalog number on this page
-is checked against [`https://aiwave.live/api/pricing`](https://aiwave.live/api/pricing),
+one endpoint; the model ID is a parameter. The route, family and video counts
+on this page are checked against [`https://aiwave.live/api/pricing`](https://aiwave.live/api/pricing),
 which needs no key. Dated USD rates are at [aiwave.live/pricing](https://aiwave.live/pricing).
 
 ```python
@@ -43,7 +43,7 @@ resp = client.chat.completions.create(
 
 ## Verify our numbers yourself
 
-The AIWave catalog counts and model IDs below trace to the live public endpoint:
+The catalog counts and model IDs shown below trace to the live public endpoint:
 
 ```bash
 # Route count on the live public rate card
@@ -54,9 +54,11 @@ curl -s https://aiwave.live/api/pricing | python3 -c \
 curl -s https://aiwave.live/api/pricing | python3 -m json.tool | head -30
 ```
 
-If an AIWave catalog number in our repos disagrees with this endpoint, that's a bug —
-open an issue. The [quickstart repo](https://github.com/AIWaveAPI/aiwave-quickstart)
-runs this comparison in CI every day, across every repo in this org.
+If an AIWave catalog claim in our repos disagrees with this endpoint, open an
+issue. The [quickstart repo](https://github.com/AIWaveAPI/aiwave-quickstart)
+checks specified route/family/video count patterns and matching backticked
+model IDs daily across the public repositories listed in its workflow. This
+scan does not verify every price, model capability or live route availability.
 
 ## Models developers actually search for
 
@@ -125,3 +127,4 @@ version and its release notes before relying on a new SDK fix.
 ## Links
 
 [Quickstart](https://aiwave.live/docs/quickstart) · [Pricing](https://aiwave.live/pricing) · [API docs](https://aiwave.live/docs/) · [Create account](https://aiwave.live/register)
+
