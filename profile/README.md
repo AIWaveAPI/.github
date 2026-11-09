@@ -111,7 +111,7 @@ Dated USD rates: [aiwave.live/pricing](https://aiwave.live/pricing)
 | Repo | What it is |
 |---|---|
 | [aiwave-quickstart](https://github.com/AIWaveAPI/aiwave-quickstart) | curl / Python / Node examples, cost estimator, error-handling recipes |
-| [aiwave-video-pack](https://github.com/AIWaveAPI/aiwave-video-pack) | Free validated cinematic prompt modules (with evidence) |
+| [aiwave-video-pack](https://github.com/AIWaveAPI/aiwave-video-pack) | Four copyable video prompt examples; payload syntax tested, visual results not independently verified |
 | [aiwave-sdk-python](https://github.com/AIWaveAPI/aiwave-sdk-python) | `pip install aiwave` |
 | [aiwave-sdk-node](https://github.com/AIWaveAPI/aiwave-sdk-node) | `npm install aiwave` |
 | [credit-receipt](https://github.com/AIWaveAPI/credit-receipt) | Offline, supplier-neutral credit-ledger checks; reports unknowns instead of inventing a cash rate |
@@ -127,8 +127,8 @@ version and its release notes before relying on a new SDK fix.
   names the exact `file:line`.
 - **Examples** state caveats learned in production (timeouts, silent video
   failures, required reference images) instead of hiding them.
-- **Video prompt modules** publish their validation record, including N=1 and
-  known failure modes.
+- **Video prompt examples** disclose author-reported N=1 runs, missing public
+  clips and task receipts, and known limitations.
 
 ## Links
 
