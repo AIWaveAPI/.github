@@ -23,11 +23,16 @@ one endpoint; the model ID is a parameter. The route, family and video counts
 on this page are checked against [`https://aiwave.live/api/pricing`](https://aiwave.live/api/pricing),
 which needs no key. Dated USD rates are at [aiwave.live/pricing](https://aiwave.live/pricing).
 
+Install `openai` and set your own `AIWAVE_API_KEY` as shown in the
+[quickstart](https://github.com/AIWaveAPI/aiwave-quickstart#1-set-your-environment).
+The example prints the response; it does not require storing your key in source.
+
 ```python
+import os
 from openai import OpenAI
 
 client = OpenAI(
-    api_key="your-aiwave-key",
+    api_key=os.environ["AIWAVE_API_KEY"],
     base_url="https://aiwave.live/v1",
 )
 
@@ -35,6 +40,7 @@ resp = client.chat.completions.create(
     model="deepseek-v4-flash",
     messages=[{"role": "user", "content": "Say hello in one sentence."}],
 )
+print(resp.choices[0].message.content)
 ```
 
 **Get a key:** [aiwave.live/register](https://aiwave.live/register)
