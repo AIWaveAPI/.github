@@ -19,15 +19,20 @@ AIWave is an OpenAI-compatible API that serves **97 public routes** across
 **10 Chinese AI model families** — DeepSeek, GLM, Kimi, Qwen, Doubao, StepFun,
 Xiaomi MiMo, MiniMax, Kling and Wan — plus Claude coding-team and other
 international routes, and **13 public video-generation routes**. One key and
-one endpoint; the model ID is a parameter. Every catalog number on this page
-is checked against [`https://aiwave.live/api/pricing`](https://aiwave.live/api/pricing),
+one endpoint; the model ID is a parameter. The route, family and video counts
+on this page are checked against [`https://aiwave.live/api/pricing`](https://aiwave.live/api/pricing),
 which needs no key. Dated USD rates are at [aiwave.live/pricing](https://aiwave.live/pricing).
 
+Install `openai` and set your own `AIWAVE_API_KEY` as shown in the
+[quickstart](https://github.com/AIWaveAPI/aiwave-quickstart#1-set-your-environment).
+The example prints the response; it does not require storing your key in source.
+
 ```python
+import os
 from openai import OpenAI
 
 client = OpenAI(
-    api_key="your-aiwave-key",
+    api_key=os.environ["AIWAVE_API_KEY"],
     base_url="https://aiwave.live/v1",
 )
 
@@ -35,6 +40,7 @@ resp = client.chat.completions.create(
     model="deepseek-v4-flash",
     messages=[{"role": "user", "content": "Say hello in one sentence."}],
 )
+print(resp.choices[0].message.content)
 ```
 
 **Get a key:** [aiwave.live/register](https://aiwave.live/register)
@@ -43,7 +49,7 @@ resp = client.chat.completions.create(
 
 ## Verify our numbers yourself
 
-Every claim in this org traces to a public endpoint. No marketing math:
+The catalog counts and model IDs shown below trace to the live public endpoint:
 
 ```bash
 # Route count on the live public rate card
@@ -54,9 +60,11 @@ curl -s https://aiwave.live/api/pricing | python3 -c \
 curl -s https://aiwave.live/api/pricing | python3 -m json.tool | head -30
 ```
 
-If any number in our repos disagrees with these endpoints, that's a bug —
-open an issue. The [quickstart repo](https://github.com/AIWaveAPI/aiwave-quickstart)
-runs this comparison in CI every day, across every repo in this org.
+If an AIWave catalog claim in our repos disagrees with this endpoint, open an
+issue. The [quickstart repo](https://github.com/AIWaveAPI/aiwave-quickstart)
+checks specified route/family/video count patterns and matching backticked
+model IDs daily across the public repositories listed in its workflow. This
+scan does not verify every price, model capability or live route availability.
 
 ## Models developers actually search for
 
@@ -103,21 +111,26 @@ Dated USD rates: [aiwave.live/pricing](https://aiwave.live/pricing)
 | Repo | What it is |
 |---|---|
 | [aiwave-quickstart](https://github.com/AIWaveAPI/aiwave-quickstart) | curl / Python / Node examples, cost estimator, error-handling recipes |
-| [aiwave-video-pack](https://github.com/AIWaveAPI/aiwave-video-pack) | Free validated cinematic prompt modules (with evidence) |
+| [aiwave-video-pack](https://github.com/AIWaveAPI/aiwave-video-pack) | Four copyable video prompt examples; payload syntax tested, visual results not independently verified |
 | [aiwave-sdk-python](https://github.com/AIWaveAPI/aiwave-sdk-python) | `pip install aiwave` |
 | [aiwave-sdk-node](https://github.com/AIWaveAPI/aiwave-sdk-node) | `npm install aiwave` |
+| [credit-receipt](https://github.com/AIWaveAPI/credit-receipt) | Offline, supplier-neutral credit-ledger checks; reports unknowns instead of inventing a cash rate |
+
+Repository changes can precede a package release. Check the installed package
+version and its release notes before relying on a new SDK fix.
 
 ## How this org handles facts
 
-- **Prices and model IDs** come from the live public endpoint, never from a
+- **AIWave prices and model IDs** come from the live public endpoint, never from a
   copied blog post or another aggregator.
 - **Route counts** are checked by CI daily; a drift turns the build red and
   names the exact `file:line`.
 - **Examples** state caveats learned in production (timeouts, silent video
   failures, required reference images) instead of hiding them.
-- **Video prompt modules** publish their validation record, including N=1 and
-  known failure modes.
+- **Video prompt examples** disclose author-reported N=1 runs, missing public
+  clips and task receipts, and known limitations.
 
 ## Links
 
 [Quickstart](https://aiwave.live/docs/quickstart) · [Pricing](https://aiwave.live/pricing) · [API docs](https://aiwave.live/docs/) · [Create account](https://aiwave.live/register)
+
