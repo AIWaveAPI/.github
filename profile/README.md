@@ -18,8 +18,9 @@
 AIWave is an OpenAI-compatible API that lists **97 model IDs on the public rate card** across
 **10 Chinese AI model families** — DeepSeek, GLM, Kimi, Qwen, Doubao, StepFun,
 Xiaomi MiMo, MiniMax, Kling and Wan — plus Claude coding-team and other
-international model IDs, and **13 video IDs on the public rate card**. One key and
-one endpoint; the model ID is a parameter. Catalog membership does not prove
+international model IDs, and **13 video IDs on the public rate card**. One account
+and API base URL support several operation-specific paths; the exact model ID is a
+parameter for the relevant operation. Catalog membership does not prove
 access for a given key or live route health. The listed-ID, family and video-ID counts
 on this page are checked against [`https://aiwave.live/api/pricing`](https://aiwave.live/api/pricing),
 which needs no key. Dated USD rates are at [aiwave.live/pricing](https://aiwave.live/pricing).
@@ -75,12 +76,12 @@ This is a lookup table, not a benchmark or a review.
 
 | If you're searching for | What's actually on our rate card | Notes |
 |---|---|---|
-| `deepseek v4 flash`, `deepseek flash` | `deepseek-v4-flash`, `deepseek-flash`, `deepseek-v4.1-flash` | Three fast DeepSeek routes |
-| `deepseek v4 pro` | `deepseek-v4-pro` | Higher-capability DeepSeek chat route |
-| `qwen3 coder` | `qwen3.8-max`, `qwen3.8-27b`, `qwen3-max`; coding-specific: `kimi-k2.7-code`, `kimi-k2.7-code-highspeed` | There is no `qwen3-coder` ID on our card — these are the general and coding routes we do serve |
-| `kimi k3`, `kimi review` | `kimi-k3`, `kimi-k2.7-code-highspeed`, `kimi-k2.6` | Moonshot long-context and coding routes; we publish availability, not benchmarks |
+| `deepseek v4 flash`, `deepseek flash` | `deepseek-v4-flash`, `deepseek-flash`, `deepseek-v4.1-flash` | Three IDs on the public rate card; measure latency for your workload |
+| `deepseek v4 pro` | `deepseek-v4-pro` | DeepSeek Pro ID on the public rate card |
+| `qwen3 coder` | `qwen3.8-max`, `qwen3.8-27b`, `qwen3-max`; coding-specific: `kimi-k2.7-code`, `kimi-k2.7-code-highspeed` | There is no `qwen3-coder` ID on our card — these are catalog IDs; verify operation and account-group access |
+| `kimi k3`, `kimi review` | `kimi-k3`, `kimi-k2.7-code-highspeed`, `kimi-k2.6` | Moonshot catalog IDs; verify capabilities and access for your key |
 | `chinese ai api pricing 2026` | — | [Dated USD rates](https://aiwave.live/pricing), or `scripts/cost.py` in the quickstart repo to estimate a workload |
-| `chinese embedding models` | `qwen3.7-text-embedding` | Embedding route on the same endpoint |
+| `chinese embedding models` | `qwen3.7-text-embedding` | Embedding ID; check the operation-specific endpoint before use |
 | `kling`, `seedance`, `hailuo`, `wan` video | `kling-v3`, `kling-video-o1`, `doubao-seedance-2-5-260628`, `MiniMax-Hailuo-2.3`, `wan3.0-video` | Video IDs on the public card |
 
 To confirm a model is currently on the card:
@@ -100,7 +101,7 @@ Full auto-generated list: [MODEL_REFERENCE.md](https://github.com/AIWaveAPI/aiwa
 | GLM (Zhipu) | `glm-5`, `glm-5.1`, `glm-5.3` series |
 | Kimi (Moonshot) | `kimi-k3` long-context |
 | Qwen (Alibaba) | qwen3.8 / qwen3.7 lines — Max, VL, embeddings |
-| Doubao / StepFun / MiMo / MiniMax | Complete family coverage |
+| Doubao / StepFun / MiMo / MiniMax | Catalog-listed entries across these families |
 | Kling / Wan (video) | `kling-v3`, `kling-video-o1`, `wan3.0-video` |
 | International | Claude coding-team series, Cohere, and more |
 
