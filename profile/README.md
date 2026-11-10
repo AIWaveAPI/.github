@@ -4,9 +4,9 @@
 
 **One OpenAI-compatible API for Chinese AI models — and AI video.**
 
-[![Routes](https://img.shields.io/badge/public%20rate%20card-97%20routes-blue)](https://aiwave.live/api/pricing)
+[![Listed IDs](https://img.shields.io/badge/model%20IDs-97-blue)](https://aiwave.live/api/pricing)
 [![Families](https://img.shields.io/badge/Chinese%20families-10-blue)](https://aiwave.live/models)
-[![Video](https://img.shields.io/badge/public%20video%20routes-13-purple)](https://aiwave.live/models)
+[![Video](https://img.shields.io/badge/video%20IDs-13-purple)](https://aiwave.live/models)
 [![Docs](https://img.shields.io/badge/docs-quickstart-blue)](https://aiwave.live/docs/quickstart)
 
 </div>
@@ -15,11 +15,12 @@
 
 ## What is AIWave?
 
-AIWave is an OpenAI-compatible API that serves **97 public routes** across
+AIWave is an OpenAI-compatible API that lists **97 model IDs on the public rate card** across
 **10 Chinese AI model families** — DeepSeek, GLM, Kimi, Qwen, Doubao, StepFun,
 Xiaomi MiMo, MiniMax, Kling and Wan — plus Claude coding-team and other
-international routes, and **13 public video-generation routes**. One key and
-one endpoint; the model ID is a parameter. The route, family and video counts
+international model IDs, and **13 video IDs on the public rate card**. One key and
+one endpoint; the model ID is a parameter. Catalog membership does not prove
+access for a given key or live route health. The listed-ID, family and video-ID counts
 on this page are checked against [`https://aiwave.live/api/pricing`](https://aiwave.live/api/pricing),
 which needs no key. Dated USD rates are at [aiwave.live/pricing](https://aiwave.live/pricing).
 
@@ -52,7 +53,7 @@ print(resp.choices[0].message.content)
 The catalog counts and model IDs shown below trace to the live public endpoint:
 
 ```bash
-# Route count on the live public rate card
+# Model-ID count on the live public rate card
 curl -s https://aiwave.live/api/pricing | python3 -c \
   "import sys,json; d=json.load(sys.stdin); ms=d['models'] if 'models' in d else d['data']; print(len(ms))"
 
@@ -62,7 +63,7 @@ curl -s https://aiwave.live/api/pricing | python3 -m json.tool | head -30
 
 If an AIWave catalog claim in our repos disagrees with this endpoint, open an
 issue. The [quickstart repo](https://github.com/AIWaveAPI/aiwave-quickstart)
-checks specified route/family/video count patterns and matching backticked
+checks specified listed-ID/family/video-ID count patterns and matching backticked
 model IDs daily across the public repositories listed in its workflow. This
 scan does not verify every price, model capability or live route availability.
 
@@ -80,7 +81,7 @@ This is a lookup table, not a benchmark or a review.
 | `kimi k3`, `kimi review` | `kimi-k3`, `kimi-k2.7-code-highspeed`, `kimi-k2.6` | Moonshot long-context and coding routes; we publish availability, not benchmarks |
 | `chinese ai api pricing 2026` | — | [Dated USD rates](https://aiwave.live/pricing), or `scripts/cost.py` in the quickstart repo to estimate a workload |
 | `chinese embedding models` | `qwen3.7-text-embedding` | Embedding route on the same endpoint |
-| `kling`, `seedance`, `hailuo`, `wan` video | `kling-v3`, `kling-video-o1`, `doubao-seedance-2-5-260628`, `MiniMax-Hailuo-2.3`, `wan3.0-video` | Video routes on the public card |
+| `kling`, `seedance`, `hailuo`, `wan` video | `kling-v3`, `kling-video-o1`, `doubao-seedance-2-5-260628`, `MiniMax-Hailuo-2.3`, `wan3.0-video` | Video IDs on the public card |
 
 To confirm a model is currently on the card:
 
@@ -123,7 +124,7 @@ version and its release notes before relying on a new SDK fix.
 
 - **AIWave prices and model IDs** come from the live public endpoint, never from a
   copied blog post or another aggregator.
-- **Route counts** are checked by CI daily; a drift turns the build red and
+- **Catalog counts** are checked by CI daily; a drift turns the build red and
   names the exact `file:line`.
 - **Examples** state caveats learned in production (timeouts, silent video
   failures, required reference images) instead of hiding them.
