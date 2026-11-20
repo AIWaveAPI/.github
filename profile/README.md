@@ -13,6 +13,26 @@
 
 ---
 
+## Start with your task
+
+| I want to... | Start here |
+|---|---|
+| Send my first API request | [Quickstart: set your environment](https://github.com/AIWaveAPI/aiwave-quickstart#1-set-your-environment), then run the curl, Python or Node example |
+| Add AIWave to a Python or Node app | [Python SDK](https://github.com/AIWaveAPI/aiwave-sdk-python) · [Node SDK](https://github.com/AIWaveAPI/aiwave-sdk-node) |
+| Diagnose a failed request | [Troubleshooting](https://github.com/AIWaveAPI/aiwave-quickstart/blob/main/docs/TROUBLESHOOTING.md) |
+| Check a credit ledger locally | [Credit Receipt](https://github.com/AIWaveAPI/credit-receipt): start with synthetic data; no AIWave account required |
+| Explore video prompt examples | [Video Pack](https://github.com/AIWaveAPI/aiwave-video-pack): four starting points with explicit evidence limits |
+
+The SDKs and quickstart integrate with AIWave. Credit Receipt is a standalone,
+supplier-neutral tool. Repository fixes may precede a package release; check
+the installed version before relying on a new SDK behavior.
+
+For usage questions, bugs or account support, see our
+[support guide](https://github.com/AIWaveAPI/.github/blob/main/SUPPORT.md).
+Keep credentials and private request data out of public issues.
+
+---
+
 ## What is AIWave?
 
 AIWave is an OpenAI-compatible API that lists **91 model IDs on the public rate card** across
@@ -125,8 +145,8 @@ version and its release notes before relying on a new SDK fix.
 
 - **AIWave prices and model IDs** come from the live public endpoint, never from a
   copied blog post or another aggregator.
-- **Catalog counts** are checked by CI daily; a drift turns the build red and
-  names the exact `file:line`.
+- **Selected catalog counts and model IDs** are checked by scheduled CI. A passing
+  scan does not prove live route availability, model capabilities or every price.
 - **Examples** state caveats learned in production (timeouts, silent video
   failures, required reference images) instead of hiding them.
 - **Video prompt examples** disclose author-reported N=1 runs, missing public
