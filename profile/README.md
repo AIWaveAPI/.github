@@ -4,7 +4,7 @@
 
 **One OpenAI-compatible API for Chinese AI models — and AI video.**
 
-[![Listed IDs](https://img.shields.io/badge/model%20IDs-97-blue)](https://aiwave.live/api/pricing)
+[![Listed IDs](https://img.shields.io/badge/model%20IDs-91-blue)](https://aiwave.live/api/pricing)
 [![Families](https://img.shields.io/badge/Chinese%20families-10-blue)](https://aiwave.live/models)
 [![Video](https://img.shields.io/badge/video%20IDs-13-purple)](https://aiwave.live/models)
 [![Docs](https://img.shields.io/badge/docs-quickstart-blue)](https://aiwave.live/docs/quickstart)
@@ -15,7 +15,7 @@
 
 ## What is AIWave?
 
-AIWave is an OpenAI-compatible API that lists **97 model IDs on the public rate card** across
+AIWave is an OpenAI-compatible API that lists **91 model IDs on the public rate card** across
 **10 Chinese AI model families** — DeepSeek, GLM, Kimi, Qwen, Doubao, StepFun,
 Xiaomi MiMo, MiniMax, Kling and Wan — plus Claude coding-team and other
 international model IDs, and **13 video IDs on the public rate card**. One account
